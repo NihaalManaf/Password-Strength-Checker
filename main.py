@@ -77,7 +77,7 @@ def score_your_password(w: str):
         char1_index = char_to_index[char1]
         char2_index = char_to_index[char2]
         probability = bigram_set[char1_index][char2_index]
-        nll -= torch.log(probability)
+        nll -= torch.log(probability).item()
     return(nll)
 
 to_score = input("what password would you like to score? ")
