@@ -10,7 +10,7 @@ with open('rockyou.txt', encoding='utf-8', errors='ignore') as list:
 words = words.split('\n')
 
 # We'd need to retrieve a list of characters that we have in our dataset
-chars = set(''.join(words)) #  we have 709 characters for the full corpus
+chars = sorted(set(''.join(words))) #  we have 709 characters for the full corpus
 chars.add('~')
 
 # We will now need to init a n x n tensor and calculate the count of each probability, where n = chars + 1
