@@ -4,13 +4,13 @@ This is a simple password strength checker that works by calculating the negativ
 
 ## Motivation
 
-This is probably not a good idea because the probability of an upcoming character is always super dependnat on all the characters before that and not just the previous character. This is just an opportunity for me to build a bigram model.
+This is probably not a good idea because the probability of an upcoming character is always super dependent on all the characters before that and not just the previous character. This is just an opportunity for me to build a bigram model.
 
 ## How it works
 
-A bigram model heavily depends on the corpus its trained on and there exists vast amounts of password wordlists of commonly used passwords and so there could exist some sort of learning a bigram model can model and the NLL from the characters of a password could be indidcative of how common the password could be! Lots of coulds in the previous sentence. 
+A bigram model heavily depends on the corpus its trained on and there exists vast amounts of password wordlists of commonly used passwords and so there could exist some sort of learning a bigram model can model and the NLL from the characters of a password could be indicative of how common the password could be! Lots of coulds in the previous sentence. 
 
-All I did here was train a bigram over `rockyou.txt` which is a popular pen testing wordlist that comes preinstalled in kali linux. Then I ask for your password, from then I'd iterate through and look up the probabiltiy of each char c appearing after the character behind it and take the negated log loss!
+All I did here was train a bigram over `rockyou.txt` which is a popular pen testing wordlist that comes preinstalled in kali linux. Then I ask for your password, from then I'd iterate through and look up the probability of each char c appearing after the character behind it and take the negated log loss!
 
 The higher your score here, the 'better' your password. Maximise your loss fn for this case haha
 
