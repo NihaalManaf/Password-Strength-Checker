@@ -4,7 +4,7 @@ This is a simple password strength checker that works by calculating the negativ
 
 ## Motivation
 
-This is probably not a good idea because the probability of an upcoming character is always super dependnat on the all characters before that and not just the previous characters. This is just an opportunity for me to build a bigram model.
+This is probably not a good idea because the probability of an upcoming character is always super dependnat on all the characters before that and not just the previous character. This is just an opportunity for me to build a bigram model.
 
 ## How it works
 
