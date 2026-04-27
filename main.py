@@ -11,7 +11,7 @@ words = words.split('\n')
 
 # We'd need to retrieve a list of characters that we have in our dataset
 chars = sorted(set(''.join(words))) #  we have 709 characters for the full corpus
-chars.add('~')
+chars.append('~')
 
 # We will now need to init a n x n tensor and calculate the count of each probability, where n = chars + 1
 bigram_set = torch.ones([len(chars), len(chars)], dtype=float)
@@ -77,7 +77,7 @@ def score_your_password(w: str):
         char1_index = char_to_index[char1]
         char2_index = char_to_index[char2]
         probability = bigram_set[char1_index][char2_index]
-        nll -= math.log(probability)
+        nll -= torch.log(probability)
     return(nll)
 
 to_score = input("what password would you like to score? ")
