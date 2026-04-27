@@ -12,6 +12,27 @@ All I did here was train a bigram over `rockyou.txt` which is a popular pen test
 
 The higher your score here, the 'better' your password. Maximise your loss fn for this case haha
 
+### Proof it works
+
+A quick sanity check across a mix of weak, common, and stronger passwords (higher = better):
+
+| Password                     | Score  |
+|------------------------------|--------|
+| `123456`                     | 16.21  |
+| `qwerty`                     | 21.33  |
+| `hunter2`                    | 22.55  |
+| `nihaal`                     | 23.00  |
+| `iloveyou`                   | 25.20  |
+| `password`                   | 26.63  |
+| `aaaaaa`                     | 27.94  |
+| `Tr0ub4dor&3`                | 56.51  |
+| `correcthorsebatterystaple`  | 73.02  |
+| `xK7#mQ9vL2pZ`               | 90.85  |
+| `j8Hq@2Wm^5Rt*Yp`            | 110.95 |
+| `Zx9$Qw!7Vb#3Np&Lk`          | 120.56 |
+
+The higher the better. I know proof by example isn't a thing but we can incline towards believing this is a simple but solid strat and it's only O(n), where n is the length of characters in the password we're testing. 
+
 ## How `tensor.pt` is handled 
 
 Training over the full `rockyou.txt` corpus is slow, so the trained count tensor is cached to disk:
